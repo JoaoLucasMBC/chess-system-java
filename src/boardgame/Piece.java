@@ -21,10 +21,4 @@ public abstract class Piece {
         }
         return false;
     }
-
-    public boolean isThereAnyPossibleMove() {
-        for (boolean move : possibleMoves()[]) {
-
-        }
-    }
 }
