@@ -85,8 +85,10 @@ public class ChessMatch {
     }
 
     private void nextTurn() {
-        turn ++;
         currentPlayer = (currentPlayer == Color.WHITE) ? Color.BLACK : Color.WHITE;
+        if (currentPlayer == Color.WHITE) {
+            turn ++;
+        }
     }
 
     private void placeNewPiece(char column, int row, ChessPiece piece) {
