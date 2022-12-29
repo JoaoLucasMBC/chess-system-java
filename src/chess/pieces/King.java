@@ -45,7 +45,6 @@ public class King extends ChessPiece {
         // #specialmove castling
         if ((getMoveCount() == 0) && !chessMatch.getCheck()) {
             // kingside castle
-            System.out.println("entrei com move count" + getMoveCount());
             Position posKingRook = new Position(position.getRow(), position.getColumn() + 3);
             if (testRookCastling(posKingRook)) {
                 Position p1 = new Position(position.getRow(), position.getColumn() + 1);
