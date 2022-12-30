@@ -20,11 +20,13 @@ public class ChessMatch {
     private boolean checkMate;
     private ChessPiece enPassantVulnerable;
     private ChessPiece promoted;
+    private int numberOfPlayers;
 
-    public ChessMatch() {
+    public ChessMatch(int numberOfPlayers) {
         this.board = new Board(8, 8);
         turn = 1;
         currentPlayer = Color.WHITE;
+        this.numberOfPlayers = numberOfPlayers;
         initialSetup();
     }
 
@@ -47,6 +49,8 @@ public class ChessMatch {
     public ChessPiece getEnPassantVulnerable() { return enPassantVulnerable; }
 
     public ChessPiece getPromoted() { return promoted; }
+
+    public int getNumberOfPlayers() { return numberOfPlayers; }
 
     public ChessPiece[][] getPieces() {
         ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];
