@@ -128,6 +128,7 @@ public class Program {
                 sc.nextLine();
             }
         }
+        client.stopEngine();
         UI.clearScreen();
         UI.printMatch(chessMatch, captured);
     }
