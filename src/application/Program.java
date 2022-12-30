@@ -1,9 +1,7 @@
 package application;
 
-import chess.ChessException;
-import chess.ChessMatch;
-import chess.ChessPiece;
-import chess.ChessPosition;
+import chess.*;
+import stockfish.Stockfish;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -17,11 +15,19 @@ public class Program {
         ChessMatch chessMatch = new ChessMatch();
         List<ChessPiece> captured = new ArrayList<>();
 
+        Stockfish client = new Stockfish();
+        FENGenerator fenGenerator = new FENGenerator(chessMatch);
+
         while (!chessMatch.getCheckMate()) {
             try {
                 UI.clearScreen();
                 UI.printMatch(chessMatch, captured);
                 System.out.println();
+
+                // stockfish test
+                String FEN = fenGenerator.generateFEN();
+                System.out.println(FEN);
+
                 System.out.print("Source: ");
                 ChessPosition source = UI.readChessPosition(sc);
 
